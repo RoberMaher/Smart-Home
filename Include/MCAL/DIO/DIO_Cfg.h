@@ -40,10 +40,7 @@
 #define PD6_INITIAL_DIRECTION  PIN_OUTPUT
 #define PD7_INITIAL_DIRECTION  PIN_INPUT
 
-/*/
-/*/
-/*/
-/*/
+/***********************************************/
 
 #define PIN_FLOATING  0
 #define PIN_PULLUP    1
