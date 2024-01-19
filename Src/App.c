@@ -109,8 +109,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN2);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM1 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM1 ON");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+				    		_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 
 					case '2':
@@ -121,8 +121,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN2);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM1 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM2 OFF");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+				    		_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 
 						//second room
@@ -134,8 +134,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN3);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM2 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM2 ON");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+				    		_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 
 					case '4':
@@ -146,8 +146,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN3);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM2 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM2 OFF");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+				    		_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 
 						//third room
@@ -159,8 +159,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN4);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM3 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM3 ON");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+				    		_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 					case '6':
 
@@ -171,8 +171,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN4);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM3 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM3 OFF");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+					    	_delay_ms(500);
+					    	HLCD_voidClearDisplay();
 						break;
 
 						//fourth room
@@ -184,8 +184,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN6);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM4 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM4 ON");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+					    	_delay_ms(500);
+				    		HLCD_voidClearDisplay();
 						break;
 
 					case '8':
@@ -196,8 +196,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN6);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM4 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM4 OFF");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+					    	_delay_ms(500);
+					    	HLCD_voidClearDisplay();
 						break;
 
 						//the door
@@ -210,8 +210,8 @@ int main(void) {
 						MTIMER1_voidSetOCR1AValue(1000);
 						MUART_voidSendStringSyncNonBlocking("Door Is Opened\r\n");
 						HLCD_voidDisplayString("Door Is Opened");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+					    	_delay_ms(500);
+					    	HLCD_voidClearDisplay();
 						break;
 
 					case 'c':
@@ -223,8 +223,8 @@ int main(void) {
 						MTIMER1_voidSetOCR1AValue(2000);
 						MUART_voidSendStringSyncNonBlocking("Door Is Cloosed\r\n");
 						HLCD_voidDisplayString("Door Is Cloosed");
-				    	_delay_ms(500);
-				    	HLCD_voidClearDisplay();
+					    	_delay_ms(500);
+					    	HLCD_voidClearDisplay();
 						break;
 
 					default:
@@ -237,7 +237,7 @@ int main(void) {
 						MTIMER0_voidSetOCR0Value(10000);
 						_delay_ms(500);
 						MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
-				    	HLCD_voidClearDisplay();
+					    	HLCD_voidClearDisplay();
 					}
 
 					_delay_ms(400);
