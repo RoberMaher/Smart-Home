@@ -38,12 +38,10 @@ int main(void) {
 	MUART_voidInit();
 	MTIMER0_voidInit();
 	MTIMER1_voidInit();
-	MTIMER0_voidSetOCR0Value(0);
-
 	HLCD_voidInit();
 
 	u8 local_u8ReceivedData = 255;
-	int attempts = 3,counter=3;
+	int attempts = 3;
 
 	// Set your initial users
 	User validUsers[MAX_USERS] = {
@@ -64,29 +62,35 @@ int main(void) {
 	char enteredPassword[PASSWORD_SIZE + 1];
 
 	// Send a welcome message
-	MUART_voidSendStringSyncNonBlocking("Welcome to the Smart Home System!\r\n\r\n");
+	MUART_voidSendStringSyncNonBlocking("Welcome to the Smart Home System!\r\n");
 	HLCD_voidDisplayString("Welcome Home...");
-	_delay_ms(500);
+	_delay_ms(1000);
 	HLCD_voidClearDisplay();
-	while(1){
-		// Loop until the correct credentials are entered or maximum attempts reached
-		MUART_voidSendStringSyncNonBlocking("Enter username: ");
+
+	// Loop until the correct credentials are entered or maximum attempts reached
+	do {
+		MUART_voidSendStringSyncNonBlocking("\r\nEnter username: ");
 		MUART_voidReceiveStringSync(enteredUsername);
 
 		MUART_voidSendStringSyncNonBlocking("\r\nEnter password: ");
 		MUART_voidReceiveStringSync(enteredPassword);
 
 		// Check if the entered credentials are correct
-
 		for (int i = 0; i < MAX_USERS; ++i) {
 			if (VerifyCredentials(enteredUsername, enteredPassword, &validUsers[i])) {
 
-		        char greetingMessage[20];
-		        strcpy(greetingMessage, "Hello ");
-		        strcat(greetingMessage, validUsers[i].username);
-		        HLCD_voidDisplayString(greetingMessage);
-		    	_delay_ms(500);
-		    	HLCD_voidClearDisplay();
+				;
+				HLCD_voidClearDisplay();
+
+				MUART_voidSendStringSyncNonBlocking("\r\nAccess Granted!\r\n\r\n");
+
+				MUART_voidSendStringSyncNonBlocking("To Turn ON the FirstRoom Press 1\r\nTo Turn OFF the FirstRoom Press 2\r\n");
+				MUART_voidSendStringSyncNonBlocking("\r\nTo Turn ON the SecondRoom Press 3\r\nTo Turn OFF the SecondRoom Press 4\r\n");
+				MUART_voidSendStringSyncNonBlocking("\r\nTo Turn ON the ThirdRoom Press 5\r\nTo Turn OFF the ThirdRoom Press 6\r\n");
+				MUART_voidSendStringSyncNonBlocking("\r\nTo Turn ON the FourthRoom Press 7\r\nTo Turn OFF the FourthRoom Press 8\r\n");
+				MUART_voidSendStringSyncNonBlocking("\r\nTo Open The Door Press o or O\r\nTo Close The Door Press c or C\r\n\r\n");
+
+				HLCD_voidClearDisplay();
 
 				while(1){
 					MUART_voidSendStringSyncNonBlocking("\r\n\r\nTo Turn ON the FirstRoom Press 1\r\nTo Turn OFF the FirstRoom Press 2\r\n");
@@ -109,8 +113,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN2);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM1 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM1 ON");
-				    		_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 					case '2':
@@ -121,8 +125,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN2);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM1 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM2 OFF");
-				    		_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 						//second room
@@ -134,8 +138,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN3);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM2 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM2 ON");
-				    		_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 					case '4':
@@ -146,8 +150,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN3);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM2 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM2 OFF");
-				    		_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 						//third room
@@ -159,8 +163,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN4);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM3 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM3 ON");
-				    		_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 					case '6':
 
@@ -171,8 +175,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN4);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM3 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM3 OFF");
-					    	_delay_ms(500);
-					    	HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 						//fourth room
@@ -184,8 +188,8 @@ int main(void) {
 						HLED_voidTurnOn(DIO_PORTD, PIN6);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM4 ON\r\n");
 						HLCD_voidDisplayString("Light ROOM4 ON");
-					    	_delay_ms(500);
-				    		HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 					case '8':
@@ -196,8 +200,8 @@ int main(void) {
 						HLED_voidTurnOff(DIO_PORTD, PIN6);
 						MUART_voidSendStringSyncNonBlocking("Light ROOM4 OFF\r\n");
 						HLCD_voidDisplayString("Light ROOM4 OFF");
-					    	_delay_ms(500);
-					    	HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 						//the door
@@ -210,8 +214,8 @@ int main(void) {
 						MTIMER1_voidSetOCR1AValue(1000);
 						MUART_voidSendStringSyncNonBlocking("Door Is Opened\r\n");
 						HLCD_voidDisplayString("Door Is Opened");
-					    	_delay_ms(500);
-					    	HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 					case 'c':
@@ -223,8 +227,8 @@ int main(void) {
 						MTIMER1_voidSetOCR1AValue(2000);
 						MUART_voidSendStringSyncNonBlocking("Door Is Cloosed\r\n");
 						HLCD_voidDisplayString("Door Is Cloosed");
-					    	_delay_ms(500);
-					    	HLCD_voidClearDisplay();
+						_delay_ms(500);
+						HLCD_voidClearDisplay();
 						break;
 
 					default:
@@ -237,7 +241,7 @@ int main(void) {
 						MTIMER0_voidSetOCR0Value(10000);
 						_delay_ms(500);
 						MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
-					    	HLCD_voidClearDisplay();
+						HLCD_voidClearDisplay();
 					}
 
 					_delay_ms(400);
@@ -249,36 +253,36 @@ int main(void) {
 			}
 
 		}
-				attempts--;
+		attempts--;
 
-				MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_OUTPUT);
-				MTIMER0_voidSetOCR0Value(10000);
-				_delay_ms(500);
-				MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
+		MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_OUTPUT);
+		MTIMER0_voidSetOCR0Value(10000);
+		_delay_ms(500);
+		MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
 
-				// If no user matched, show access denied message
-				MUART_voidSendStringSyncNonBlocking("\r\n\r\nUsername Or Password incorrect.Please try again.\r\n\r\n");
-				HLCD_voidDisplayString("Access Denied!");
-				_delay_ms(500);
-				HLCD_voidClearDisplay();
+		// If no user matched, show access denied message
+		MUART_voidSendStringSyncNonBlocking("\r\n\r\nUsername Or Password incorrect.Please try again.\r\n\r\n");
+		HLCD_voidDisplayString("Access Denied!");
+		_delay_ms(500);
+		HLCD_voidClearDisplay();
 
-				if (attempts == 0) {
-					MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_OUTPUT);
-					MTIMER0_voidSetOCR0Value(200);
-					_delay_ms(300);
-					MTIMER0_voidSetOCR0Value(0);
-					_delay_ms(300);
-					MTIMER0_voidSetOCR0Value(200);
-					_delay_ms(300);
-					MTIMER0_voidSetOCR0Value(0);
-					_delay_ms(300);
-					MTIMER0_voidSetOCR0Value(200);
-					_delay_ms(300);
-					MTIMER0_voidSetOCR0Value(0);
-					MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
-					attempts=3;
-				}
+		if (attempts == 0) {
+			MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_OUTPUT);
+			MTIMER0_voidSetOCR0Value(200);
+			_delay_ms(300);
+			MTIMER0_voidSetOCR0Value(0);
+			_delay_ms(300);
+			MTIMER0_voidSetOCR0Value(200);
+			_delay_ms(300);
+			MTIMER0_voidSetOCR0Value(0);
+			_delay_ms(300);
+			MTIMER0_voidSetOCR0Value(200);
+			_delay_ms(300);
+			MTIMER0_voidSetOCR0Value(0);
+			MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
+			attempts=3;
+		}
 
-	}
+	}while(1);
 	return 0;
 }
