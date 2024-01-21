@@ -1,14 +1,7 @@
-/*
- * LCD_Cfg.h
- *
- *  Created on: Nov 3, 2023
- *      Author: D E L L
- */
-
 #ifndef INCLUDE_HAL_LCD_LCD_CFG_H_
 #define INCLUDE_HAL_LCD_LCD_CFG_H_
 
-#define LCD_DATA_PORT DIO_PORTC
+#define LCD_DATA_PORT DIO_PORTA
 #define LCD_CTRL_PORT DIO_PORTB
 
 #define LCD_RS_PIN  PIN0
