@@ -41,6 +41,7 @@ int main(void) {
 	MTIMER1_voidInit();
 	HLCD_voidInit();
 
+
 	Display_WelcomeMessage();
 
 	// Loop until the correct credentials are entered or maximum attempts reached
