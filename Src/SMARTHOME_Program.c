@@ -53,7 +53,7 @@ int Smart_Home(u8 local_u8ReceivedData){
 		MUART_voidSendStringSyncNonBlocking("\r\n");
 		HLED_voidTurnOff(DIO_PORTD, PIN2);
 		MUART_voidSendStringSyncNonBlocking("Light ROOM1 OFF\r\n");
-		HLCD_voidDisplayString("Light ROOM2 OFF");
+		HLCD_voidDisplayString("Light ROOM1 OFF");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
 		BuzzerOn(10000);
