@@ -180,6 +180,26 @@ int Smart_Home(u8 local_u8ReceivedData){
 		BuzzerOff ();
 		break;
 
+	case 'b':
+				BuzzerOn(200);
+				_delay_ms(300);
+
+				BuzzerOff ();
+				_delay_ms(300);
+
+				BuzzerOn(200);
+				_delay_ms(300);
+
+				BuzzerOff ();
+				_delay_ms(300);
+
+				BuzzerOn(200);
+				_delay_ms(300);
+
+				BuzzerOff ();
+
+				break;
+
 	default:
 	{
 		BuzzerOn(1000);

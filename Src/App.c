@@ -14,84 +14,189 @@
 #include "../Include/HAL/LCD/LCD_Interface.h"
 #include "../Include/HAL/EEPROM/EEPROM_Interface.h"
 
-#include "../SMARTHOME/SMARTHOME_Interface.h"
-
 #define F_CPU 8000000UL
-
-// Set your initial users
-User validUsers[MAX_USERS] = {
-		{"user0", "0000"},
-		{"user1", "1111"},
-		{"user2", "2222"},
-		{"user3", "3333"},
-		{"user4", "4444"},
-		{"user5", "5555"},
-		{"user6", "6666"},
-		{"user7", "7777"},
-		{"user8", "8888"},
-		{"user9", "9999"}
-};
-u8 local_u8ReceivedData = 255;
-int attempts = 3;
 
 int main(void) {
 	MDIO_voidInit();
 	MUART_voidInit();
 	MTIMER0_voidInit();
 	MTIMER1_voidInit();
+	u8 local_u8ReceivedData = 255;
+
 	HLCD_voidInit();
 
 
-	Display_WelcomeMessage();
+	HLCD_voidDisplayString("Welcome Home...");
+	_delay_ms(1000);
+	HLCD_voidClearDisplay();
 
-	// Loop until the correct credentials are entered or maximum attempts reached
-	do {
-		MUART_voidSendStringSyncNonBlocking("\r\nEnter username: ");
-		MUART_voidReceiveStringSync(enteredUsername);
+	while(1){
 
-		MUART_voidSendStringSyncNonBlocking("\r\nEnter password: ");
-		MUART_voidReceiveStringSync(enteredPassword);
+		local_u8ReceivedData = MUART_u8ReadByteSyncBlocking();
 
-		// Check if the entered credentials are correct
-		for (int i = 0; i < MAX_USERS; ++i) {
-			if (VerifyCredentials(enteredUsername, enteredPassword, &validUsers[i])) {
+		switch(local_u8ReceivedData)
+		{
 
-				MUART_voidSendStringSyncNonBlocking("\r\nAccess Granted!\r\n\r\n");
-				HLCD_voidDisplayString("Access Granted!");
-				_delay_ms(1000);
-				HLCD_voidClearDisplay();
+		//first room
+		case '1':
 
-				while(1){
-					Display_Menu();
-					local_u8ReceivedData = MUART_u8ReadByteSyncBlocking();
-					Smart_Home(local_u8ReceivedData);
-				}
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOn(DIO_PORTD, PIN2);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM1 ON\r\n");
+			HLCD_voidDisplayString("Light ROOM1 ON");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
 
-				_delay_ms(400);
-				HLCD_voidClearDisplay();
-			}
+		case '2':
 
-		}
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOff(DIO_PORTD, PIN2);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM1 OFF\r\n");
+			HLCD_voidDisplayString("Light ROOM1 OFF");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
 
-		attempts--;
+			//second room
+		case '3':
 
-		BuzzerOn(10000);
-		_delay_ms(500);
-		BuzzerOff ();
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOn(DIO_PORTD, PIN3);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM2 ON\r\n");
+			HLCD_voidDisplayString("Light ROOM2 ON");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
 
-		WrongInput();
+		case '4':
 
-		if (attempts == 0) {
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOff(DIO_PORTD, PIN3);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM2 OFF\r\n");
+			HLCD_voidDisplayString("Light ROOM2 OFF");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+			//third room
+		case '5':
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOn(DIO_PORTD, PIN4);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM3 ON\r\n");
+			HLCD_voidDisplayString("Light ROOM3 ON");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+		case '6':
+
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOff(DIO_PORTD, PIN4);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM3 OFF\r\n");
+			HLCD_voidDisplayString("Light ROOM3 OFF");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+			//fourth room
+		case '7':
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOn(DIO_PORTD, PIN6);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM4 ON\r\n");
+			HLCD_voidDisplayString("Light ROOM4 ON");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+		case '8':
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			HLED_voidTurnOff(DIO_PORTD, PIN6);
+			MUART_voidSendStringSyncNonBlocking("Light ROOM4 OFF\r\n");
+			HLCD_voidDisplayString("Light ROOM4 OFF");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+			//the door
+		case 'o':
+		case 'O':
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			MTIMER1_voidSetOCR1AValue(1000);
+			MUART_voidSendStringSyncNonBlocking("Door Is Opened\r\n");
+			HLCD_voidDisplayString("Door Is Opened");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+		case 'c':
+		case 'C':
+
+			MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
+			MUART_voidSendStringSyncNonBlocking("\r\n");
+			MTIMER1_voidSetOCR1AValue(2000);
+			MUART_voidSendStringSyncNonBlocking("Door Is Cloosed\r\n");
+			HLCD_voidDisplayString("Door Is Cloosed");
+			_delay_ms(500);
+			HLCD_voidClearDisplay();
+			BuzzerOn(10000);
+			_delay_ms(1000);
+			BuzzerOff ();
+			break;
+
+
+		case 'b':
 			BuzzerOn(200);
 			_delay_ms(300);
 
-			BuzzerOn(0);
+			BuzzerOff ();
 			_delay_ms(300);
 
 			BuzzerOn(200);
 			_delay_ms(300);
 
-			BuzzerOn(0);
+			BuzzerOff ();
 			_delay_ms(300);
 
 			BuzzerOn(200);
@@ -99,9 +204,7 @@ int main(void) {
 
 			BuzzerOff ();
 
-			attempts=3;
+			break;
 		}
-
-	}while(1);
-	return 0;
+	}
 }
