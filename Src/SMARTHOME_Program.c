@@ -42,6 +42,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM1 ON");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 	case '2':
@@ -53,6 +56,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM2 OFF");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 		//second room
@@ -65,6 +71,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM2 ON");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 	case '4':
@@ -76,6 +85,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM2 OFF");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 		//third room
@@ -88,7 +100,11 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM3 ON");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
+
 	case '6':
 
 
@@ -99,6 +115,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM3 OFF");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 		//fourth room
@@ -111,6 +130,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM4 ON");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 	case '8':
@@ -122,6 +144,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Light ROOM4 OFF");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 		//the door
@@ -135,6 +160,9 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Door Is Opened");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 	case 'c':
@@ -147,18 +175,20 @@ int Smart_Home(u8 local_u8ReceivedData){
 		HLCD_voidDisplayString("Door Is Cloosed");
 		_delay_ms(500);
 		HLCD_voidClearDisplay();
+		BuzzerOn(10000);
+		_delay_ms(1000);
+		BuzzerOff ();
 		break;
 
 	default:
 	{
-		MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_OUTPUT);
+		BuzzerOn(1000);
 		MUART_voidSendByteSyncBlocking(local_u8ReceivedData);
 		MUART_voidSendStringSyncNonBlocking("\r\n");
 		MUART_voidSendStringSyncNonBlocking("Its wrong chois please try again.\r\n");
 		HLCD_voidDisplayString("Wrong chois!!");
-		MTIMER0_voidSetOCR0Value(10000);
 		_delay_ms(500);
-		MDIO_voidSetPinDirection(DIO_PORTB,PIN3,DIO_INPUT);
+		BuzzerOff();
 		HLCD_voidClearDisplay();
 	}
 
