@@ -7,7 +7,8 @@ Src/App.o Src/App.o: ../Src/App.c ../Src/../Include/LIB/STD_TYPES.h \
   ../Src/../include/MCAL/TWI/TWI_interface.h \
   ../Src/../Include/HAL/LED/LED_Interface.h \
   ../Src/../Include/HAL/LCD/LCD_Interface.h \
-  ../Src/../Include/HAL/EEPROM/EEPROM_Interface.h
+  ../Src/../Include/HAL/EEPROM/EEPROM_Interface.h \
+  ../Src/../SMARTHOME/SMARTHOME_Interface.h
 
 ../Src/../Include/LIB/STD_TYPES.h:
 
@@ -28,3 +29,5 @@ Src/App.o Src/App.o: ../Src/App.c ../Src/../Include/LIB/STD_TYPES.h \
 ../Src/../Include/HAL/LCD/LCD_Interface.h:
 
 ../Src/../Include/HAL/EEPROM/EEPROM_Interface.h:
+
+../Src/../SMARTHOME/SMARTHOME_Interface.h:

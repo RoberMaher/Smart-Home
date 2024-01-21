@@ -9,7 +9,7 @@ d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/av
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
                               ./Src/App.o (__do_copy_data)
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
-                              ./Src/EXTI_Program.o (__do_clear_bss)
+                              ./Src/App.o (__do_clear_bss)
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
                               ./Src/App.o (__fixunssfsi)
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
@@ -37,9 +37,15 @@ d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/av
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
                               d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o) (__fpcmp_parts_f)
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                              ./Src/App.o (strcmp)
+                              ./Src/SMARTHOME_Program.o (strcmp)
 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
-                              ./Src/App.o (strlen)
+                              ./Src/SMARTHOME_Program.o (strlen)
+
+Allocating common symbols
+Common symbol       size              file
+
+enteredUsername     0x11              ./Src/App.o
+enteredPassword     0x5               ./Src/App.o
 
 Memory Configuration
 
@@ -160,7 +166,7 @@ LOAD d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x4bf8
+.text           0x00000000     0x4c62
  *(.vectors)
  .vectors       0x00000000       0x54 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -277,228 +283,246 @@ LOAD d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3
  .text          0x00000b46        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
                 0x00000b46                . = ALIGN (0x2)
  *(.text.*)
- .text.VerifyCredentials
-                0x00000b46       0x7c ./Src/App.o
-                0x00000b46                VerifyCredentials
- .text.main     0x00000bc2     0x1bbe ./Src/App.o
-                0x00000bc2                main
+ .text.main     0x00000b46      0x8bc ./Src/App.o
+                0x00000b46                main
  .text.MDIO_voidSetPinDirection
-                0x00002780      0x246 ./Src/DIO_Program.o
-                0x00002780                MDIO_voidSetPinDirection
+                0x00001402      0x246 ./Src/DIO_Program.o
+                0x00001402                MDIO_voidSetPinDirection
  .text.MDIO_voidSetPinValue
-                0x000029c6      0x246 ./Src/DIO_Program.o
-                0x000029c6                MDIO_voidSetPinValue
+                0x00001648      0x246 ./Src/DIO_Program.o
+                0x00001648                MDIO_voidSetPinValue
  .text.MDIO_getPinValue
-                0x00002c0c      0x102 ./Src/DIO_Program.o
-                0x00002c0c                MDIO_getPinValue
+                0x0000188e      0x102 ./Src/DIO_Program.o
+                0x0000188e                MDIO_getPinValue
  .text.MDIO_voidTogglePinValue
-                0x00002d0e      0x10a ./Src/DIO_Program.o
-                0x00002d0e                MDIO_voidTogglePinValue
+                0x00001990      0x10a ./Src/DIO_Program.o
+                0x00001990                MDIO_voidTogglePinValue
  .text.MDIO_voidSetPortDirection
-                0x00002e18       0x88 ./Src/DIO_Program.o
-                0x00002e18                MDIO_voidSetPortDirection
+                0x00001a9a       0x88 ./Src/DIO_Program.o
+                0x00001a9a                MDIO_voidSetPortDirection
  .text.MDIO_voidSetPortValue
-                0x00002ea0       0x88 ./Src/DIO_Program.o
-                0x00002ea0                MDIO_voidSetPortValue
+                0x00001b22       0x88 ./Src/DIO_Program.o
+                0x00001b22                MDIO_voidSetPortValue
  .text.MDIO_voidInit
-                0x00002f28       0x44 ./Src/DIO_Program.o
-                0x00002f28                MDIO_voidInit
+                0x00001baa       0x44 ./Src/DIO_Program.o
+                0x00001baa                MDIO_voidInit
  .text.EEPROM_voidSendDataByte
-                0x00002f6c      0x12e ./Src/EEPROM_program.o
-                0x00002f6c                EEPROM_voidSendDataByte
+                0x00001bee      0x12e ./Src/EEPROM_program.o
+                0x00001bee                EEPROM_voidSendDataByte
  .text.EEPROM_u8ReadDataByte
-                0x0000309a       0x4a ./Src/EEPROM_program.o
-                0x0000309a                EEPROM_u8ReadDataByte
+                0x00001d1c       0x4a ./Src/EEPROM_program.o
+                0x00001d1c                EEPROM_u8ReadDataByte
  .text.MEXTI_voidConfig
-                0x000030e4       0xd4 ./Src/EXTI_Program.o
-                0x000030e4                MEXTI_voidConfig
+                0x00001d66       0xd4 ./Src/EXTI_Program.o
+                0x00001d66                MEXTI_voidConfig
  .text.MEXTI_voidEnable
-                0x000031b8       0x74 ./Src/EXTI_Program.o
-                0x000031b8                MEXTI_voidEnable
+                0x00001e3a       0x74 ./Src/EXTI_Program.o
+                0x00001e3a                MEXTI_voidEnable
  .text.MEXTI_voidDisable
-                0x0000322c       0x74 ./Src/EXTI_Program.o
-                0x0000322c                MEXTI_voidDisable
+                0x00001eae       0x74 ./Src/EXTI_Program.o
+                0x00001eae                MEXTI_voidDisable
  .text.MEXTI_voidClearFlag
-                0x000032a0       0x74 ./Src/EXTI_Program.o
-                0x000032a0                MEXTI_voidClearFlag
+                0x00001f22       0x74 ./Src/EXTI_Program.o
+                0x00001f22                MEXTI_voidClearFlag
  .text.MEXTI_voidSetCallBack
-                0x00003314       0x80 ./Src/EXTI_Program.o
-                0x00003314                MEXTI_voidSetCallBack
+                0x00001f96       0x80 ./Src/EXTI_Program.o
+                0x00001f96                MEXTI_voidSetCallBack
  .text.void__vector_1
-                0x00003394       0x2a ./Src/EXTI_Program.o
-                0x00003394                void__vector_1
+                0x00002016       0x2a ./Src/EXTI_Program.o
+                0x00002016                void__vector_1
  .text.void__vector_2
-                0x000033be       0x2a ./Src/EXTI_Program.o
-                0x000033be                void__vector_2
+                0x00002040       0x2a ./Src/EXTI_Program.o
+                0x00002040                void__vector_2
  .text.void__vector_3
-                0x000033e8       0x2a ./Src/EXTI_Program.o
-                0x000033e8                void__vector_3
+                0x0000206a       0x2a ./Src/EXTI_Program.o
+                0x0000206a                void__vector_3
  .text.MGI_voidEnable
-                0x00003412       0x1c ./Src/GI_program.o
-                0x00003412                MGI_voidEnable
+                0x00002094       0x1c ./Src/GI_program.o
+                0x00002094                MGI_voidEnable
  .text.MGI_voidDisable
-                0x0000342e       0x1c ./Src/GI_program.o
-                0x0000342e                MGI_voidDisable
+                0x000020b0       0x1c ./Src/GI_program.o
+                0x000020b0                MGI_voidDisable
  .text.HLCD_voidSendCommand
-                0x0000344a      0x13c ./Src/LCD_Program.o
-                0x0000344a                HLCD_voidSendCommand
+                0x000020cc      0x13c ./Src/LCD_Program.o
+                0x000020cc                HLCD_voidSendCommand
  .text.HLCD_voidSendData
-                0x00003586      0x13c ./Src/LCD_Program.o
-                0x00003586                HLCD_voidSendData
+                0x00002208      0x13c ./Src/LCD_Program.o
+                0x00002208                HLCD_voidSendData
  .text.HLCD_voidInit
-                0x000036c2      0x4e4 ./Src/LCD_Program.o
-                0x000036c2                HLCD_voidInit
+                0x00002344      0x4e4 ./Src/LCD_Program.o
+                0x00002344                HLCD_voidInit
  .text.HLCD_voidClearDisplay
-                0x00003ba6      0x110 ./Src/LCD_Program.o
-                0x00003ba6                HLCD_voidClearDisplay
+                0x00002828      0x110 ./Src/LCD_Program.o
+                0x00002828                HLCD_voidClearDisplay
  .text.HLCD_voidDisplayString
-                0x00003cb6       0x3a ./Src/LCD_Program.o
-                0x00003cb6                HLCD_voidDisplayString
+                0x00002938       0x3a ./Src/LCD_Program.o
+                0x00002938                HLCD_voidDisplayString
  .text.HLCD_voidGoToPos
-                0x00003cf0       0x50 ./Src/LCD_Program.o
-                0x00003cf0                HLCD_voidGoToPos
+                0x00002972       0x50 ./Src/LCD_Program.o
+                0x00002972                HLCD_voidGoToPos
  .text.HLCD_voidDisplayNumber
-                0x00003d40      0x13c ./Src/LCD_Program.o
-                0x00003d40                HLCD_voidDisplayNumber
+                0x000029c2      0x13c ./Src/LCD_Program.o
+                0x000029c2                HLCD_voidDisplayNumber
  .text.HLCD_voidSendSpecialSymbol
-                0x00003e7c       0x84 ./Src/LCD_Program.o
-                0x00003e7c                HLCD_voidSendSpecialSymbol
+                0x00002afe       0x84 ./Src/LCD_Program.o
+                0x00002afe                HLCD_voidSendSpecialSymbol
  .text.HLED_voidTurnOn
-                0x00003f00       0x22 ./Src/LED_Program.o
-                0x00003f00                HLED_voidTurnOn
+                0x00002b82       0x22 ./Src/LED_Program.o
+                0x00002b82                HLED_voidTurnOn
  .text.HLED_voidTurnOff
-                0x00003f22       0x22 ./Src/LED_Program.o
-                0x00003f22                HLED_voidTurnOff
+                0x00002ba4       0x22 ./Src/LED_Program.o
+                0x00002ba4                HLED_voidTurnOff
  .text.HLED_voidToggleLED
-                0x00003f44       0x2c ./Src/LED_Program.o
-                0x00003f44                HLED_voidToggleLED
+                0x00002bc6       0x2c ./Src/LED_Program.o
+                0x00002bc6                HLED_voidToggleLED
+ .text.VerifyCredentials
+                0x00002bf2       0x7c ./Src/SMARTHOME_Program.o
+                0x00002bf2                VerifyCredentials
+ .text.Smart_Home
+                0x00002c6e     0x10b8 ./Src/SMARTHOME_Program.o
+                0x00002c6e                Smart_Home
+ .text.Display_Menu
+                0x00003d26       0x36 ./Src/SMARTHOME_Program.o
+                0x00003d26                Display_Menu
+ .text.Display_WelcomeMessage
+                0x00003d5c      0x11e ./Src/SMARTHOME_Program.o
+                0x00003d5c                Display_WelcomeMessage
+ .text.WrongInput
+                0x00003e7a      0x11e ./Src/SMARTHOME_Program.o
+                0x00003e7a                WrongInput
+ .text.BuzzerOn
+                0x00003f98       0x2a ./Src/SMARTHOME_Program.o
+                0x00003f98                BuzzerOn
+ .text.BuzzerOff
+                0x00003fc2       0x18 ./Src/SMARTHOME_Program.o
+                0x00003fc2                BuzzerOff
  .text.MTIMER0_voidInit
-                0x00003f70       0x6a ./Src/TIMERS_Program.o
-                0x00003f70                MTIMER0_voidInit
+                0x00003fda       0x6a ./Src/TIMERS_Program.o
+                0x00003fda                MTIMER0_voidInit
  .text.MTIMER0_voidSetPreloadValue
-                0x00003fda       0x1c ./Src/TIMERS_Program.o
-                0x00003fda                MTIMER0_voidSetPreloadValue
+                0x00004044       0x1c ./Src/TIMERS_Program.o
+                0x00004044                MTIMER0_voidSetPreloadValue
  .text.MTIMER0_voidSetOVFCallback
-                0x00003ff6       0x2c ./Src/TIMERS_Program.o
-                0x00003ff6                MTIMER0_voidSetOVFCallback
+                0x00004060       0x2c ./Src/TIMERS_Program.o
+                0x00004060                MTIMER0_voidSetOVFCallback
  .text.__vector_11
-                0x00004022       0x66 ./Src/TIMERS_Program.o
-                0x00004022                __vector_11
+                0x0000408c       0x66 ./Src/TIMERS_Program.o
+                0x0000408c                __vector_11
  .text.MTIMER0_voidSetCTCCallback
-                0x00004088       0x2c ./Src/TIMERS_Program.o
-                0x00004088                MTIMER0_voidSetCTCCallback
+                0x000040f2       0x2c ./Src/TIMERS_Program.o
+                0x000040f2                MTIMER0_voidSetCTCCallback
  .text.MTIMER0_voidSetOCR0Value
-                0x000040b4       0x1c ./Src/TIMERS_Program.o
-                0x000040b4                MTIMER0_voidSetOCR0Value
+                0x0000411e       0x1c ./Src/TIMERS_Program.o
+                0x0000411e                MTIMER0_voidSetOCR0Value
  .text.MTIMER0_voidStopTimer
-                0x000040d0       0x1c ./Src/TIMERS_Program.o
-                0x000040d0                MTIMER0_voidStopTimer
+                0x0000413a       0x1c ./Src/TIMERS_Program.o
+                0x0000413a                MTIMER0_voidStopTimer
  .text.MTIMER1_voidInit
-                0x000040ec       0xa4 ./Src/TIMERS_Program.o
-                0x000040ec                MTIMER1_voidInit
+                0x00004156       0xa4 ./Src/TIMERS_Program.o
+                0x00004156                MTIMER1_voidInit
  .text.MTIMER1_voidSetOCR1AValue
-                0x00004190       0x24 ./Src/TIMERS_Program.o
-                0x00004190                MTIMER1_voidSetOCR1AValue
+                0x000041fa       0x24 ./Src/TIMERS_Program.o
+                0x000041fa                MTIMER1_voidSetOCR1AValue
  .text.MTIMER1_voidICUSWInit
-                0x000041b4       0x38 ./Src/TIMERS_Program.o
-                0x000041b4                MTIMER1_voidICUSWInit
+                0x0000421e       0x38 ./Src/TIMERS_Program.o
+                0x0000421e                MTIMER1_voidICUSWInit
  .text.MTIMER1_voidSetTimer1Value
-                0x000041ec       0x24 ./Src/TIMERS_Program.o
-                0x000041ec                MTIMER1_voidSetTimer1Value
+                0x00004256       0x24 ./Src/TIMERS_Program.o
+                0x00004256                MTIMER1_voidSetTimer1Value
  .text.MTIMER1_u16ReadTimer1Value
-                0x00004210       0x16 ./Src/TIMERS_Program.o
-                0x00004210                MTIMER1_u16ReadTimer1Value
+                0x0000427a       0x16 ./Src/TIMERS_Program.o
+                0x0000427a                MTIMER1_u16ReadTimer1Value
  .text.TWI_voidInitMaster
-                0x00004226       0x64 ./Src/TWI_program.o
-                0x00004226                TWI_voidInitMaster
+                0x00004290       0x64 ./Src/TWI_program.o
+                0x00004290                TWI_voidInitMaster
  .text.TWI_voidInitSlave
-                0x0000428a       0x3a ./Src/TWI_program.o
-                0x0000428a                TWI_voidInitSlave
+                0x000042f4       0x3a ./Src/TWI_program.o
+                0x000042f4                TWI_voidInitSlave
  .text.TWI_ErrorStatusSendStartConditionWithACK
-                0x000042c4       0x54 ./Src/TWI_program.o
-                0x000042c4                TWI_ErrorStatusSendStartConditionWithACK
+                0x0000432e       0x54 ./Src/TWI_program.o
+                0x0000432e                TWI_ErrorStatusSendStartConditionWithACK
  .text.TWI_ErrorStatusSendRepeatedStartConditionWithACK
-                0x00004318       0x46 ./Src/TWI_program.o
-                0x00004318                TWI_ErrorStatusSendRepeatedStartConditionWithACK
+                0x00004382       0x46 ./Src/TWI_program.o
+                0x00004382                TWI_ErrorStatusSendRepeatedStartConditionWithACK
  .text.TWI_ErrorStatusSendSlaveAddressWithWriteACK
-                0x0000435e       0x70 ./Src/TWI_program.o
-                0x0000435e                TWI_ErrorStatusSendSlaveAddressWithWriteACK
+                0x000043c8       0x70 ./Src/TWI_program.o
+                0x000043c8                TWI_ErrorStatusSendSlaveAddressWithWriteACK
  .text.TWI_ErrorStatusSendSlaveAddressWithReadACK
-                0x000043ce       0x70 ./Src/TWI_program.o
-                0x000043ce                TWI_ErrorStatusSendSlaveAddressWithReadACK
+                0x00004438       0x70 ./Src/TWI_program.o
+                0x00004438                TWI_ErrorStatusSendSlaveAddressWithReadACK
  .text.TWI_ErrorStatusMasterWriteDataByteWithACK
-                0x0000443e       0x52 ./Src/TWI_program.o
-                0x0000443e                TWI_ErrorStatusMasterWriteDataByteWithACK
+                0x000044a8       0x52 ./Src/TWI_program.o
+                0x000044a8                TWI_ErrorStatusMasterWriteDataByteWithACK
  .text.TWI_ErrorStatusMasterReadDataByteWithACK
-                0x00004490       0x5e ./Src/TWI_program.o
-                0x00004490                TWI_ErrorStatusMasterReadDataByteWithACK
+                0x000044fa       0x5e ./Src/TWI_program.o
+                0x000044fa                TWI_ErrorStatusMasterReadDataByteWithACK
  .text.TWI_voidSendStopCondition
-                0x000044ee       0x2a ./Src/TWI_program.o
-                0x000044ee                TWI_voidSendStopCondition
+                0x00004558       0x2a ./Src/TWI_program.o
+                0x00004558                TWI_voidSendStopCondition
  .text.MUART_voidInit
-                0x00004518       0x64 ./Src/UART_Prgoram.o
-                0x00004518                MUART_voidInit
+                0x00004582       0x64 ./Src/UART_Prgoram.o
+                0x00004582                MUART_voidInit
  .text.MUART_voidSendByteSyncBlocking
-                0x0000457c       0x5a ./Src/UART_Prgoram.o
-                0x0000457c                MUART_voidSendByteSyncBlocking
+                0x000045e6       0x5a ./Src/UART_Prgoram.o
+                0x000045e6                MUART_voidSendByteSyncBlocking
  .text.MUART_voidSendByteSyncNonBlocking
-                0x000045d6       0xee ./Src/UART_Prgoram.o
-                0x000045d6                MUART_voidSendByteSyncNonBlocking
+                0x00004640       0xee ./Src/UART_Prgoram.o
+                0x00004640                MUART_voidSendByteSyncNonBlocking
  .text.MUART_voidSendStringSyncNonBlocking
-                0x000046c4       0x3a ./Src/UART_Prgoram.o
-                0x000046c4                MUART_voidSendStringSyncNonBlocking
+                0x0000472e       0x3a ./Src/UART_Prgoram.o
+                0x0000472e                MUART_voidSendStringSyncNonBlocking
  .text.MUART_voidSendByteAsync
-                0x000046fe       0x34 ./Src/UART_Prgoram.o
-                0x000046fe                MUART_voidSendByteAsync
+                0x00004768       0x34 ./Src/UART_Prgoram.o
+                0x00004768                MUART_voidSendByteAsync
  .text.MUART_voidReceiveStringSync
-                0x00004732       0x5c ./Src/UART_Prgoram.o
-                0x00004732                MUART_voidReceiveStringSync
+                0x0000479c       0x5c ./Src/UART_Prgoram.o
+                0x0000479c                MUART_voidReceiveStringSync
  .text.MUART_u8ReadByteSyncBlocking
-                0x0000478e       0x1e ./Src/UART_Prgoram.o
-                0x0000478e                MUART_u8ReadByteSyncBlocking
+                0x000047f8       0x1e ./Src/UART_Prgoram.o
+                0x000047f8                MUART_u8ReadByteSyncBlocking
  .text.MUART_u8ReadByteAsync
-                0x000047ac       0x14 ./Src/UART_Prgoram.o
-                0x000047ac                MUART_u8ReadByteAsync
+                0x00004816       0x14 ./Src/UART_Prgoram.o
+                0x00004816                MUART_u8ReadByteAsync
  .text.MUART_u8ReadByteSyncNonBlocking
-                0x000047c0       0x58 ./Src/UART_Prgoram.o
-                0x000047c0                MUART_u8ReadByteSyncNonBlocking
+                0x0000482a       0x58 ./Src/UART_Prgoram.o
+                0x0000482a                MUART_u8ReadByteSyncNonBlocking
  .text.MUART_VoidSendNumber
-                0x00004818      0x152 ./Src/UART_Prgoram.o
-                0x00004818                MUART_VoidSendNumber
+                0x00004882      0x152 ./Src/UART_Prgoram.o
+                0x00004882                MUART_VoidSendNumber
  .text.MUART_voidSetCallBack
-                0x0000496a       0x44 ./Src/UART_Prgoram.o
-                0x0000496a                MUART_voidSetCallBack
+                0x000049d4       0x44 ./Src/UART_Prgoram.o
+                0x000049d4                MUART_voidSetCallBack
  .text.__vector_13
-                0x000049ae       0x66 ./Src/UART_Prgoram.o
-                0x000049ae                __vector_13
+                0x00004a18       0x66 ./Src/UART_Prgoram.o
+                0x00004a18                __vector_13
  .text.__vector_14
-                0x00004a14       0x66 ./Src/UART_Prgoram.o
-                0x00004a14                __vector_14
+                0x00004a7e       0x66 ./Src/UART_Prgoram.o
+                0x00004a7e                __vector_14
  .text.__vector_15
-                0x00004a7a       0x66 ./Src/UART_Prgoram.o
-                0x00004a7a                __vector_15
- .text.libgcc   0x00004ae0       0x3e d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
-                0x00004ae0                __mulsi3
- .text.libgcc   0x00004b1e       0x44 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
-                0x00004b1e                __udivmodsi4
- .text.libgcc   0x00004b62        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00004b62        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00004b62        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00004b62       0x38 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x00004b62                __prologue_saves__
- .text.libgcc   0x00004b9a       0x36 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x00004b9a                __epilogue_restores__
+                0x00004ae4       0x66 ./Src/UART_Prgoram.o
+                0x00004ae4                __vector_15
+ .text.libgcc   0x00004b4a       0x3e d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+                0x00004b4a                __mulsi3
+ .text.libgcc   0x00004b88       0x44 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+                0x00004b88                __udivmodsi4
+ .text.libgcc   0x00004bcc        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00004bcc        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00004bcc        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00004bcc       0x38 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x00004bcc                __prologue_saves__
+ .text.libgcc   0x00004c04       0x36 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x00004c04                __epilogue_restores__
  .text.avr-libc
-                0x00004bd0       0x12 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
-                0x00004bd0                strcmp
+                0x00004c3a       0x12 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
+                0x00004c3a                strcmp
  .text.avr-libc
-                0x00004be2       0x12 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
-                0x00004be2                strlen
-                0x00004bf4                . = ALIGN (0x2)
+                0x00004c4c       0x12 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
+                0x00004c4c                strlen
+                0x00004c5e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00004bf4        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x00004bf4                exit
-                0x00004bf4                _exit
+ .fini9         0x00004c5e        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x00004c5e                exit
+                0x00004c5e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -517,117 +541,129 @@ LOAD d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00004bf4        0x4 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x00004c5e        0x4 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00004bf8                _etext = .
+                0x00004c62                _etext = .
 
-.data           0x00800060      0x41c load address 0x00004bf8
+.data           0x00800060      0x488 load address 0x00004c62
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .data          0x00800060      0x414 ./Src/App.o
- .data          0x00800474        0x0 ./Src/DIO_Program.o
- .data          0x00800474        0x0 ./Src/EEPROM_program.o
- .data          0x00800474        0x0 ./Src/EXTI_Program.o
- .data          0x00800474        0x0 ./Src/GI_program.o
- .data          0x00800474        0x0 ./Src/LCD_Program.o
- .data          0x00800474        0x0 ./Src/LED_Program.o
- .data          0x00800474        0x0 ./Src/SMARTHOME_Program.o
- .data          0x00800474        0x0 ./Src/TIMERS_Program.o
- .data          0x00800474        0x0 ./Src/TWI_program.o
- .data          0x00800474        0x0 ./Src/UART_Prgoram.o
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .data          0x00800474        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .data          0x00800474        0x8 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
-                0x00800474                __thenan_sf
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
- .data          0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
+ .data          0x00800060       0x4c ./Src/App.o
+ .data          0x008000ac        0x0 ./Src/DIO_Program.o
+ .data          0x008000ac        0x0 ./Src/EEPROM_program.o
+ .data          0x008000ac        0x0 ./Src/EXTI_Program.o
+ .data          0x008000ac        0x0 ./Src/GI_program.o
+ .data          0x008000ac        0x0 ./Src/LCD_Program.o
+ .data          0x008000ac        0x0 ./Src/LED_Program.o
+ .data          0x008000ac      0x355 ./Src/SMARTHOME_Program.o
+ .data          0x00800401        0x0 ./Src/TIMERS_Program.o
+ .data          0x00800401        0x0 ./Src/TWI_program.o
+ .data          0x00800401        0x0 ./Src/UART_Prgoram.o
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .data          0x00800401        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .data          0x00800401        0x8 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+                0x00800401                __thenan_sf
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
+ .data          0x00800409        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
  *(.data*)
+ .data.validUsers
+                0x00800409       0xdc ./Src/App.o
+                0x00800409                validUsers
+ .data.local_u8ReceivedData
+                0x008004e5        0x1 ./Src/App.o
+                0x008004e5                local_u8ReceivedData
+ .data.attempts
+                0x008004e6        0x2 ./Src/App.o
+                0x008004e6                attempts
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x0080047c                . = ALIGN (0x2)
-                0x0080047c                _edata = .
-                0x0080047c                PROVIDE (__data_end, .)
+                0x008004e8                . = ALIGN (0x2)
+                0x008004e8                _edata = .
+                0x008004e8                PROVIDE (__data_end, .)
 
-.bss            0x0080047c       0x10
-                0x0080047c                PROVIDE (__bss_start, .)
+.bss            0x008004e8       0x26
+                0x008004e8                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
- .bss           0x0080047c        0x0 ./Src/App.o
- .bss           0x0080047c        0x0 ./Src/DIO_Program.o
- .bss           0x0080047c        0x0 ./Src/EEPROM_program.o
- .bss           0x0080047c        0x0 ./Src/EXTI_Program.o
- .bss           0x0080047c        0x0 ./Src/GI_program.o
- .bss           0x0080047c        0x0 ./Src/LCD_Program.o
- .bss           0x0080047c        0x0 ./Src/LED_Program.o
- .bss           0x0080047c        0x0 ./Src/SMARTHOME_Program.o
- .bss           0x0080047c        0x0 ./Src/TIMERS_Program.o
- .bss           0x0080047c        0x0 ./Src/TWI_program.o
- .bss           0x0080047c        0x0 ./Src/UART_Prgoram.o
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
- .bss           0x0080047c        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x008004e8        0x0 ./Src/App.o
+ .bss           0x008004e8        0x0 ./Src/DIO_Program.o
+ .bss           0x008004e8        0x0 ./Src/EEPROM_program.o
+ .bss           0x008004e8        0x0 ./Src/EXTI_Program.o
+ .bss           0x008004e8        0x0 ./Src/GI_program.o
+ .bss           0x008004e8        0x0 ./Src/LCD_Program.o
+ .bss           0x008004e8        0x0 ./Src/LED_Program.o
+ .bss           0x008004e8        0x0 ./Src/SMARTHOME_Program.o
+ .bss           0x008004e8        0x0 ./Src/TIMERS_Program.o
+ .bss           0x008004e8        0x0 ./Src/TWI_program.o
+ .bss           0x008004e8        0x0 ./Src/UART_Prgoram.o
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fixunssfsi.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_addsub_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_mul_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_gt_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_ge_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_lt_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_sf_to_si.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_thenan_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_pack_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_unpack_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strcmp.o)
+ .bss           0x008004e8        0x0 d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5\libc.a(strlen.o)
  *(.bss*)
  .bss.EXTI0_Callback
-                0x0080047c        0x2 ./Src/EXTI_Program.o
-                0x0080047c                EXTI0_Callback
+                0x008004e8        0x2 ./Src/EXTI_Program.o
+                0x008004e8                EXTI0_Callback
  .bss.EXTI1_Callback
-                0x0080047e        0x2 ./Src/EXTI_Program.o
-                0x0080047e                EXTI1_Callback
+                0x008004ea        0x2 ./Src/EXTI_Program.o
+                0x008004ea                EXTI1_Callback
  .bss.EXTI2_Callback
-                0x00800480        0x2 ./Src/EXTI_Program.o
-                0x00800480                EXTI2_Callback
+                0x008004ec        0x2 ./Src/EXTI_Program.o
+                0x008004ec                EXTI2_Callback
  .bss.TIMER0_OVF_CALLBACK
-                0x00800482        0x2 ./Src/TIMERS_Program.o
-                0x00800482                TIMER0_OVF_CALLBACK
+                0x008004ee        0x2 ./Src/TIMERS_Program.o
+                0x008004ee                TIMER0_OVF_CALLBACK
  .bss.TIMER0_CTC_CALLBACK
-                0x00800484        0x2 ./Src/TIMERS_Program.o
-                0x00800484                TIMER0_CTC_CALLBACK
- .bss.FuncPtr   0x00800486        0x6 ./Src/UART_Prgoram.o
+                0x008004f0        0x2 ./Src/TIMERS_Program.o
+                0x008004f0                TIMER0_CTC_CALLBACK
+ .bss.FuncPtr   0x008004f2        0x6 ./Src/UART_Prgoram.o
  *(COMMON)
-                0x0080048c                PROVIDE (__bss_end, .)
-                0x00004bf8                __data_load_start = LOADADDR (.data)
-                0x00005014                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x008004f8       0x16 ./Src/App.o
+                0x008004f8                enteredUsername
+                0x00800509                enteredPassword
+                0x0080050e                PROVIDE (__bss_end, .)
+                0x00004c62                __data_load_start = LOADADDR (.data)
+                0x000050ea                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080048c        0x0
-                0x0080048c                PROVIDE (__noinit_start, .)
+.noinit         0x0080050e        0x0
+                0x0080050e                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x0080048c                PROVIDE (__noinit_end, .)
-                0x0080048c                _end = .
-                0x0080048c                PROVIDE (__heap_start, .)
+                0x0080050e                PROVIDE (__noinit_end, .)
+                0x0080050e                _end = .
+                0x0080050e                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -645,33 +681,33 @@ LOAD d:/download/imt/imt_sdk_win_64/imt_sdk_win_64/winavr/bin/../lib/gcc/avr/4.3
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x3e58
+.stab           0x00000000     0x4938
  *(.stab)
- .stab          0x00000000      0xf48 ./Src/App.o
- .stab          0x00000f48      0x594 ./Src/DIO_Program.o
+ .stab          0x00000000      0xb88 ./Src/App.o
+ .stab          0x00000b88      0x594 ./Src/DIO_Program.o
                                 0x684 (size before relaxing)
- .stab          0x000014dc      0x36c ./Src/EEPROM_program.o
+ .stab          0x0000111c      0x36c ./Src/EEPROM_program.o
                                 0x5e8 (size before relaxing)
- .stab          0x00001848      0x4e0 ./Src/EXTI_Program.o
+ .stab          0x00001488      0x4e0 ./Src/EXTI_Program.o
                                 0x4ec (size before relaxing)
- .stab          0x00001d28      0x144 ./Src/GI_program.o
+ .stab          0x00001968      0x144 ./Src/GI_program.o
                                 0x1c8 (size before relaxing)
- .stab          0x00001e6c      0xa8c ./Src/LCD_Program.o
+ .stab          0x00001aac      0xa8c ./Src/LCD_Program.o
                                 0xd5c (size before relaxing)
- .stab          0x000028f8      0x1ec ./Src/LED_Program.o
+ .stab          0x00002538      0x1ec ./Src/LED_Program.o
                                 0x468 (size before relaxing)
- .stab          0x00002ae4      0x120 ./Src/SMARTHOME_Program.o
-                                0x3c0 (size before relaxing)
- .stab          0x00002c04      0x480 ./Src/TIMERS_Program.o
+ .stab          0x00002724      0xfc0 ./Src/SMARTHOME_Program.o
+                               0x1314 (size before relaxing)
+ .stab          0x000036e4      0x480 ./Src/TIMERS_Program.o
                                 0x504 (size before relaxing)
- .stab          0x00003084      0x600 ./Src/TWI_program.o
+ .stab          0x00003b64      0x600 ./Src/TWI_program.o
                                 0x6a8 (size before relaxing)
- .stab          0x00003684      0x7d4 ./Src/UART_Prgoram.o
+ .stab          0x00004164      0x7d4 ./Src/UART_Prgoram.o
                                 0x9e4 (size before relaxing)
 
-.stabstr        0x00000000     0x1fa3
+.stabstr        0x00000000     0x2079
  *(.stabstr)
- .stabstr       0x00000000     0x1fa3 ./Src/App.o
+ .stabstr       0x00000000     0x2079 ./Src/App.o
 
 .stab.excl
  *(.stab.excl)
